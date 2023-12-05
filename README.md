@@ -360,9 +360,8 @@ $60 = 0x00ab
 (dbg) x/4X 0
 01:0x0000                    : 0xAB 0xE5 0x1D 0x5A
 
-The 'set' command can change memory and can create/change
-entries in the internal symbol table. Eg:
-
+The `set` command can change memory and can create/change entries in the internal symbol table; e.g.:
+```
 (dbg) x/4 0
 01:0x0000                    : 0x00 0x00 0x00 0x00
 (dbg) set 0=0x12
@@ -379,24 +378,20 @@ $0 = 0x00
 01:0x0000                    : 0x12 0xAB 0x00 0x1B
 (dbg) print &fred
 $1 = 0x10000001
+```
 
-If the lvalue is numeric, it is treated as an address and
-the result is a byte write to target memory. If the lvalue
-is a variable prefixed with '&' the result is an update to
-the variable's value.
+If the `lvalue` is numeric, it is treated as an address and the result is a byte write to target memory. If the `lvalue`
+is a variable prefixed with `&` the result is an update to the variable's value.
 
-Numbers are implicitly decimal. A leading 0 indicates an
-octal number and a leading 0x indicates a hex number.
+Numbers are implicitly decimal. A leading `0` indicates an octal number and a leading `0x` indicates a hex number.
 
 The following operators are supported:
 
-unary +, unary -, +, -, *, / == != &
+`unary +`, `unary -`, `+`, `-`, `*`, `/ == != &`
 
-Evaluation of expressions follows the usual rule that *, / bind
-more tightly than +, - so that '4+3*7' evaluates to the same
-result as '3*7+4'.
+Evaluation of expressions follows the usual rule that `*`, `/` bind more tightly than `+`, `-` so that `4+3*7` evaluates to the same result as `3*7+4`.
 
-The result of ==, !=  is 1 (true) or 0 (false).
+The result of `==`, `!=`  is `1` (true) or `0` (false).
 
 The '&' is an indirection operator. &4 is the contents of
 address 4 in the target machine (however, this is of limited
@@ -405,8 +400,8 @@ use because only byte access is supported).
 The following expression errors are detected and reported:
 
 - bad operator in expression
-- bad lvalue
-- bad rvalue
+- bad `lvalue`
+- bad `rvalue`
 - non-existent symbol
 - non-existent auto symbol
 - bad numeric literal
@@ -415,10 +410,5 @@ The following expression errors are detected and reported:
 
 However, the error-checking is not rigorous. In particular:
 
-- an expression is silently truncated at first white-space
-- an unrecognised operator is silently ignored
-- set 3+1=9 does a write to location 4, but you cannot use
-  arithmetic on the LHS with variables.
-- an error in an assignment is reported but the assignment
-  may have happened (Eg, to the wrong location or with the
-  wrong value).
+- an expression is silently truncated at first white-space - an unrecognised operator is silently ignored - set `3+1=9` does a write to location `4`, but you cannot use arithmetic on the `LHS` with variables.
+- an error in an assignment is reported but the assignment   may have happened; e.g., to the wrong location or with the wrong value.
