@@ -237,7 +237,7 @@ Exec09 maintains variables, in three separate symbol tables:
 	* `cycles` - number of cycles since reset.
 	* `et` - number of cycles elapsed since `et` was last inspected.
 	* `irqload` - the average number of cycles spent in IRQ.
-* The internal table. Variables are added to this table  using the `set var` command. The three groups of variables behave in different ways:
+* The internal table. Variables are added to this table  using the `set var` command. The three groups of variables behave in different ways.
 
 Entries in the program table:
 
@@ -248,8 +248,7 @@ Entries in the program table:
 
 For example, consider a variable `start` referring to address `0x200`. The byte at address `0x200` is `0xab`.
 ```
-set start=5           -- changes the byte at address 0x200
-                         from 0xab to 0x05.
+set start=5           -- changes the byte at address 0x200 from 0xab to 0x05.
 print start           -- displays byte from location 0x200
 print &start          -- displays 0x200
 break start           -- breakpoint at 0x200
@@ -339,15 +338,15 @@ The `set` command can change memory and can create/change entries in the interna
 (dbg) set 3=0x1b
 (dbg) x 0
 01:0x0000                    : 0x12 0x00 0x00 0x1B
-(dbg) set var fred=0x10000001
+(dbg) set var aeon=0x10000001
 (dbg) x 0
 01:0x0000                    : 0x12 0x00 0x00 0x1B
-(dbg) print fred
+(dbg) print aeon
 $0 = 0x00
-(dbg) set fred=0xab
+(dbg) set aeon=0xab
 (dbg) x 0
 01:0x0000                    : 0x12 0xAB 0x00 0x1B
-(dbg) print &fred
+(dbg) print &aeon
 $1 = 0x10000001
 ```
 
