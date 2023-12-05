@@ -8,23 +8,26 @@ Build and install (on Linux)
 you will need make, gcc, aclocal, automake and probably some other
 stuff. Then:
 
-> ./configure
-> make
+```
+./configure
+make
+```
 
 There is one executable, m6809-run. You can install it
 ("make install") or simply reference it explicitly.
 
 To see configure options:
 
-> ./configure --help
+`./configure --help`
 
 Enable readline libraries if you have them installed; this will
 allow you to use command-line recall and other shortcuts at the
 debugger command-line:
 
-> ./configure --enable-readline
-> make
-
+```
+./configure --enable-readline
+make
+```
 -----------------------------------------------------------------
 Machines
 
@@ -36,7 +39,7 @@ a new machine is fairly easy.
 
 There are five built-in machine types at present:
 
-* 'simple' - assumes that you have a full 64KB of RAM, minus some input/output functions mapped at $FF00 (see I/O below). If you compile a program with gcc6809 with no special linker option, you'll get an S-record file that is suitable for running on this machine.  The S-record file will include a vector table at $FFF0, with a reset vector that points to a _start function, which will call your main() function.  When main returns, _start writes to an 'exit register' at $FF01, which the simulator interprets and causes it to stop.
+* '`simple`' - assumes that you have a full 64KB of RAM, minus some input/output functions mapped at $FF00 (see I/O below). If you compile a program with gcc6809 with no special linker option, you'll get an S-record file that is suitable for running on this machine.  The S-record file will include a vector table at $FFF0, with a reset vector that points to a _start function, which will call your main() function.  When main returns, _start writes to an 'exit register' at $FF01, which the simulator interprets and causes it to stop.
 
 gcc6809 also has a built-in notion of which addresses are used for text and data.  The simple machine enforces this and will _fault_ on invalid accesses.
 
