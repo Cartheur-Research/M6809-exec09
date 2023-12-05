@@ -10,6 +10,7 @@ It is a requisite to have `make`, `gcc`, `aclocal`, `automake` and dependency pa
 ./configure
 make
 ```
+It maybe required to run `chmod +x configure`.
 
 There is one executable, `m6809-run`. You can install it `make install` or simply reference it explicitly. To see configurable options:
 
