@@ -231,16 +231,13 @@ Exec09 maintains variables, in three separate symbol tables:
 
 - The program table. This is loaded automatically at startup or   using the `sym` command. The contents of this table is displayed by the `vars` command. Entries in the program table are annotated onto `list`, `step` and `x` output.
 
-- The auto table. The variables in this table are pre-defined. The following variables refer to CPU registers:
-    `pc a y u s d a b dp cc`
-  The following variables refer to emulator state:
-    `cycles` - number of cycles since reset.
-    `et` - number of cycles elapsed since et was last inspected.
-    `irqload` - the average number of cycles spent in IRQ.
-
-- The internal table. Variables are added to this table  using the `set var` command.
-
-The three groups of variables behave in different ways:
+* The auto table. The variables in this table are pre-defined. The following variables refer to CPU registers:
+	* `pc a y u s d a b dp cc`
+* The following variables refer to emulator state:
+	* `cycles` - number of cycles since reset.
+	* `et` - number of cycles elapsed since `et` was last inspected.
+	* `irqload` - the average number of cycles spent in IRQ.
+* The internal table. Variables are added to this table  using the `set var` command. The three groups of variables behave in different ways:
 
 Entries in the program table:
 
