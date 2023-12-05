@@ -293,30 +293,20 @@ examples above showed for 'start'.
 
 ### Expressions
 
-Many of the debug commands accept an expression. An expression
-is one or more numbers or variables, combined using operators.
-Eg: $pc+8
+Many of the debug commands accept an expression. An expression is one or more numbers or variables, combined using operators, like `$pc+8`.
 
-Depending on the context, an expression might be an rvalue or
-might be of the form lvalue=rvalue. In both cases, no
-white-space is allowed: the expression is silently truncated
-at the white-space, so that $pc + 8 is treated the same way
-as $pc.
+Depending on the context, an expression might be an `rvalue` or might be of the form `lvalue=rvalue`. In both cases, no white-space is allowed: the expression is silently truncated at the white-space, so that `$pc + 8` is treated the same way as `$pc`.
 
-The 'print' command evalutes and displays the value of an
-rvalue and simultaneously creates an auto-table entry of the
-form $<num> where <num> increments for each successive command.
-Eg:
-
+The `print` command evalutes and displays the value of an `rvalue` and simultaneously creates an auto-table entry of the form `$<num>` where `<num>` increments for each successive command.
+```
 $1 = 0x12
 (dbg) print 2 + 4
 $2 = 0x02
 (dbg) print $1
 $3 = 0x12
-
-The values of these auto-table entries ($1, $2, $3 etc.) are
-static. Eg:
-
+```
+The values of these auto-table entries (`$1`, `$2`, `$3`, etc.) are static.
+```
 (dbg) print $pc
 $4 = 0xE012
 (dbg) step
@@ -325,19 +315,17 @@ $4 = 0xE012
 $5 = 0xE013
 (dbg) print $4
 $6 = 0xE012
+```
+In this example, the `print $4` returned the original value calculated, not the value resulting from the update of `pc`.
 
-In this example, the 'print $4' returned the original value
-calculated, not the value resulting from the update of pc.
+There are also two short-hand forms for referring to `$<num>` values:
 
-There are also two short-hand forms for referring to $<num>
-values:
+* `$`   refers to the most recent entry
+* `$$n` refers to the value from n entries ago.
+* `$`   is equivalent to `$$0`.
 
-$   refers to the most recent entry
-$$n refers to the value from n entries ago.
-$   is equivalent to $$0.
-
-Eg:
-
+As:
+```
 (dbg) print 5
 $0 = 0x05
 (dbg) print 6
@@ -350,16 +338,14 @@ $3 = 0x08
 $4 = 0x06
 (dbg) print $
 $5 = 0x06
-
-The 'print' command also accepts an expression of the form
-lvalue=rvalue in which case it performs a memory store (like
-'set') but also displays the value written. Eg:
-
+```
+The `print` command also accepts an expression of the form `lvalue=rvalue` in which case it performs a memory store - like `set` - but also displays the value written.
+```
 (dbg) print 0=0xab
 $60 = 0x00ab
 (dbg) x/4X 0
 01:0x0000                    : 0xAB 0xE5 0x1D 0x5A
-
+```
 The `set` command can change memory and can create/change entries in the internal symbol table; e.g.:
 ```
 (dbg) x/4 0
@@ -393,9 +379,7 @@ Evaluation of expressions follows the usual rule that `*`, `/` bind more tightly
 
 The result of `==`, `!=`  is `1` (true) or `0` (false).
 
-The '&' is an indirection operator. &4 is the contents of
-address 4 in the target machine (however, this is of limited
-use because only byte access is supported).
+The `&` is an indirection operator. `&4` is the contents of address `4` in the target machine; however, this is of limited use because only byte access is supported.
 
 The following expression errors are detected and reported:
 
@@ -405,7 +389,7 @@ The following expression errors are detected and reported:
 - non-existent symbol
 - non-existent auto symbol
 - bad numeric literal
-- unrecognised $symbol in assignment
+- unrecognised `$symbol` in assignment
 - missing assignment
 
 However, the error-checking is not rigorous. In particular:
