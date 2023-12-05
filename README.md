@@ -26,25 +26,6 @@ debugger command-line:
 > make
 
 -----------------------------------------------------------------
-Build and install (on OS X)
-
-The build process is very similar to Linux, so the instructions
-provided there apply to some degree to OS X as well.
-
-To automate the process of fetching and installing the
-prerequisites, configuring, compiling and installing, a script
-exists that does all the grunt work.
-
-MacPorts is required. Installing the prerequisites requires root
-privileges, so you will be asked for your password.
-
-> ./build.osx.sh
-
------------------------------------------------------------------
-Input Files
-
-
------------------------------------------------------------------
 Machines
 
 
@@ -53,39 +34,21 @@ which says what types of I/O devices are mapped into the 6809's
 address space and how they can be accessed.  Adding support for
 a new machine is fairly easy.
 
-There are 5 builtin machine types at present:
+There are five built-in machine types at present:
 
-* 'simple' - assumes that you have a full 64KB of RAM,
-minus some input/output functions mapped at $FF00 (see I/O below).
-If you compile a program with gcc6809 with no special linker
-option, you'll get an S-record file that is suitable for running
-on this machine.  The S-record file will include a vector table
-at $FFF0, with a reset vector that points to a _start function,
-which will call your main() function.  When main returns,
-_start writes to an 'exit register' at $FF01, which the simulator
-interprets and causes it to stop.
+* 'simple' - assumes that you have a full 64KB of RAM, minus some input/output functions mapped at $FF00 (see I/O below). If you compile a program with gcc6809 with no special linker option, you'll get an S-record file that is suitable for running on this machine.  The S-record file will include a vector table at $FFF0, with a reset vector that points to a _start function, which will call your main() function.  When main returns, _start writes to an 'exit register' at $FF01, which the simulator interprets and causes it to stop.
 
-gcc6809 also has a builtin notion of which addresses are used
-for text and data.  The simple machine enforces this and will
-"fault" on invalid accesses.
+gcc6809 also has a built-in notion of which addresses are used for text and data.  The simple machine enforces this and will _fault_ on invalid accesses.
 
-* 'wpc' - an emulation of the
-Williams Pinball Controller which was the impetus for me
-working on the compiler in the first place.
+* '`wpc`' - an emulation of the _Williams Pinball Controller_ which was the impetus for working on the compiler in the first place.
 
-* 'eon' (and 'eon2') - still in development, is called 'eon'
-(for Eight-O-Nine).  It is similar to simple but has some
-more advanced I/O capabilities, like a larger memory space
-that can be paged in/out, and a disk emulation for programs
-that wants to have persistence.
+* '`eon`' (and 'eon2') - still in development, is called _eon_ (for _Eight-O-Nine_).  It is similar to simple but has some more advanced I/O capabilities, like a larger memory space that can be paged in/out, and a disk emulation for programs that want to have persistence.
 
-* 'multicomp09' - see miscsbc.c for details
+* '`multicomp09`' - see miscsbc.c for details
+* '`smii`' - see miscsbc.c for details
+* '`kipper1`' - see miscsbc.c for details
 
-* 'smii' - see miscsbc.c for details
-
-* 'kipper1' - see miscsbc.c for details
-
-TODO : Would anyone be interested in a CoCo machine type?
+Would anyone be interested in a CoCo machine type?
 
 -----------------------------------------------------------------
 Faults
