@@ -2,7 +2,7 @@
 
 A portable and extendable emulator of the Motorola 6809.
 
-### Build and install (on Linux)
+## Build and install (on Linux)
 
 It is a requisite to have `make`, `gcc`, `aclocal`, `automake` and dependency packages, then:
 
@@ -21,20 +21,16 @@ Enable readline libraries if they are installed; this will allow use of command-
 ./configure --enable-readline
 make
 ```
------------------------------------------------------------------
-Machines
 
+### Machines
 
-The simulator now has the notion of different 'machines':
-which says what types of I/O devices are mapped into the 6809's
-address space and how they can be accessed.  Adding support for
-a new machine is fairly easy.
+The emulator now has the notion of different _machines_, which says what types of I/O devices are mapped into the 6809's address space and how they can be accessed.  Adding support for a new machine is fairly easy.
 
 There are five built-in machine types at present:
 
-* '`simple`' - assumes that you have a full 64KB of RAM, minus some input/output functions mapped at $FF00 (see I/O below). If you compile a program with gcc6809 with no special linker option, you'll get an S-record file that is suitable for running on this machine.  The S-record file will include a vector table at $FFF0, with a reset vector that points to a _start function, which will call your main() function.  When main returns, _start writes to an 'exit register' at $FF01, which the simulator interprets and causes it to stop.
+* '`simple`' - assumes 64KB of RAM, minus some input/output functions mapped at $FF00 (see I/O below). If you compile a program with `gcc6809` with no special linker option, you'll get an S-record file that is suitable for running on this machine.  The S-record file will include a vector table at $FFF0, with a reset vector that points to a _start function, which will call your main() function.  When main returns, _start writes to an 'exit register' at $FF01, which the emulator interprets and causes it to stop.
 
-gcc6809 also has a built-in notion of which addresses are used for text and data.  The simple machine enforces this and will _fault_ on invalid accesses.
+`gcc6809` also has a built-in notion of which addresses are used for text and data.  The simple machine enforces this and will _fault_ on invalid accesses.
 
 * '`wpc`' - an emulation of the _Williams Pinball Controller_ which was the impetus for working on the compiler in the first place.
 
@@ -46,21 +42,13 @@ gcc6809 also has a built-in notion of which addresses are used for text and data
 
 Would anyone be interested in a CoCo machine type?
 
------------------------------------------------------------------
-Faults
+### Command-line options
 
+* Use `-help` to see the command-line options.
 
------------------------------------------------------------------
-Command-line options
+### Debugging
 
-Use -help to see the command-line options.
-
------------------------------------------------------------------
-Debugging
-
-
-The simulator supports interactive debugging, similar to that
-provided by 'gdb', using the following commands:
+The emulator supports interactive debugging, similar to that provided by '`gdb`', using the following commands:
 
 b <expr>
 	Set a breakpoint on EXECUTION at the given address. Eg:
@@ -157,7 +145,7 @@ pc <expr>
 	(disassemble) CPU instructions at that address.
 
 q
-	Quit the simulator.
+	Quit the emulator.
 
 regs
 	Display the current value of the CPU registers.
@@ -237,10 +225,9 @@ info
         Describe machine, devices and address mapping.
 
 
-Symbol Tables
-=============
+### Symbol Tables
 
-Exec09 maintains variables, in 3 separate symbol tables:
+Exec09 maintains variables, in three separate symbol tables:
 
 - The program table. This is loaded automatically at startup or
   using the 'sym' command. The contents of this table is
@@ -251,7 +238,7 @@ Exec09 maintains variables, in 3 separate symbol tables:
 - The auto table. The variables in this table are pre-defined.
   The following variables refer to CPU registers:
     pc a y u s d a b dp cc
-  The following variables refer to simulator state:
+  The following variables refer to emulator state:
     cycles - number of cycles since reset.
     et - number of cycles elapsed since et was last inspected.
     irqload - the average number of cycles spent in IRQ.
@@ -304,8 +291,7 @@ set var fred=&start+2
 examples above showed for 'start'.
 
 
-Expressions
-===========
+### Expressions
 
 Many of the debug commands accept an expression. An expression
 is one or more numbers or variables, combined using operators.
