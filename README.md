@@ -1,28 +1,21 @@
 # M6809-exec
 
-A portable and extendable emulator of the Motorola 6809
+A portable and extendable emulator of the Motorola 6809.
 
------------------------------------------------------------------
-Build and install (on Linux)
+### Build and install (on Linux)
 
-you will need make, gcc, aclocal, automake and probably some other
-stuff. Then:
+It is a requisite to have `make`, `gcc`, `aclocal`, `automake` and dependency packages, then:
 
 ```
 ./configure
 make
 ```
 
-There is one executable, m6809-run. You can install it
-("make install") or simply reference it explicitly.
-
-To see configure options:
+There is one executable, `m6809-run`. You can install it `make install` or simply reference it explicitly. To see configurable options:
 
 `./configure --help`
 
-Enable readline libraries if you have them installed; this will
-allow you to use command-line recall and other shortcuts at the
-debugger command-line:
+Enable readline libraries if they are installed; this will allow use of command-line recall and other shortcuts at the debugger command-line:
 
 ```
 ./configure --enable-readline
