@@ -229,22 +229,16 @@ info
 
 Exec09 maintains variables, in three separate symbol tables:
 
-- The program table. This is loaded automatically at startup or
-  using the 'sym' command. The contents of this table is
-  displayed by the 'vars' command.
-  Entries in the program table are annotated onto 'list', 'step'
-  and 'x' output.
+- The program table. This is loaded automatically at startup or   using the `sym` command. The contents of this table is displayed by the `vars` command. Entries in the program table are annotated onto `list`, `step` and `x` output.
 
-- The auto table. The variables in this table are pre-defined.
-  The following variables refer to CPU registers:
-    pc a y u s d a b dp cc
+- The auto table. The variables in this table are pre-defined. The following variables refer to CPU registers:
+    `pc a y u s d a b dp cc`
   The following variables refer to emulator state:
-    cycles - number of cycles since reset.
-    et - number of cycles elapsed since et was last inspected.
-    irqload - the average number of cycles spent in IRQ.
+    `cycles` - number of cycles since reset.
+    `et` - number of cycles elapsed since et was last inspected.
+    `irqload` - the average number of cycles spent in IRQ.
 
-- The internal table. Variables are added to this table
-  using the 'set var' command.
+- The internal table. Variables are added to this table  using the `set var` command.
 
 The three groups of variables behave in different ways:
 
@@ -253,12 +247,10 @@ Entries in the program table:
 - converted to absolute address values when they are loaded.
 - cannot be modified.
 - new entries cannot be created interactively
-- return either an address (their value) or the data at
-  the addressed location, depending upon the context.
+- return either an address (their value) or the data at the addressed location, depending upon the context.
 
-Eg: consider a variable 'start' referring to address 0x200.
-The byte at address 0x200 is 0xab.
-
+For example, consider a variable `start` referring to address `0x200`. The byte at address `0x200` is `0xab`.
+```
 set start=5           -- changes the byte at address 0x200
                          from 0xab to 0x05.
 print start           -- displays byte from location 0x200
@@ -266,7 +258,7 @@ print &start          -- displays 0x200
 break start           -- breakpoint at 0x200
 list  start           -- list at 0x200
 examine start         -- read/display memory at 0x200
-
+```
 Entries in the auto table:
 
 - can be modified
@@ -276,20 +268,16 @@ Entries in the auto table:
 
 Entries in the internal table:
 
-- can be created interactivelt using 'set var'
+- can be created interactively using `set var`
 - can be modified
 - are not converted to absolute address values
-- return either an address (their value) or the data at
-  the addressed location, depending upon the context.
+- return either an address (their value) or the data at the addressed location, depending upon the context.
 
-Eg: consider the creation of a variable 'fred' from a
-pre-existing program variable 'start':
+For example, consider the creation of a variable `aeon` from a pre-existing program variable `start`:
 
-set var fred=&start+2
+`set var aeon=&start+2`
 
-'fred' can now be used in exactly the same way as the
-examples above showed for 'start'.
-
+`aeon` can now be used in exactly the same way as the examples above showed for `start`.
 
 ### Expressions
 
