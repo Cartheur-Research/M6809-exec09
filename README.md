@@ -40,7 +40,7 @@ There are five built-in machine types at present:
 * '`smii`' - see miscsbc.c for details
 * '`kipper1`' - see miscsbc.c for details
 
-Would anyone be interested in a CoCo machine type?
+A CoCo machine type is in the works.
 
 ### Command-line options
 
@@ -248,7 +248,7 @@ Entries in the program table:
 
 For example, consider a variable `start` referring to address `0x200`. The byte at address `0x200` is `0xab`.
 ```
-set start=5           -- changes the byte at address 0x200 from 0xab to 0x05.
+set start=5           -- changes the byte at address 0x200 from 0xab to 0x05
 print start           -- displays byte from location 0x200
 print &start          -- displays 0x200
 break start           -- breakpoint at 0x200
