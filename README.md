@@ -48,8 +48,8 @@ Would anyone be interested in a CoCo machine type?
 
 ### Debugging
 
-The emulator supports interactive debugging, similar to that provided by '`gdb`', using the following commands:
-
+The emulator supports interactive debugging, similar to that provided by `gdb`, using the following commands:
+```
 b <expr>
 	Set a breakpoint on EXECUTION at the given address. Eg:
 	break 0xf003
@@ -223,7 +223,7 @@ x [format] <expr>
 
 info
         Describe machine, devices and address mapping.
-
+```
 
 ### Symbol Tables
 
