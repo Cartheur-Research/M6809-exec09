@@ -3,7 +3,7 @@ aclocal.m4
 autom4te.cache
 aclocal.m4
 depcomp
-install.sh
+install-sh
 missing
 compile
 configure
@@ -13,6 +13,7 @@ configure
 config.h
 config.log
 config.status
+config.h.in
 m6809-run
 stamp-h1
 Makefile
