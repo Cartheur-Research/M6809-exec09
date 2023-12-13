@@ -1,6 +1,6 @@
 AC_PREREQ(2.69)
 AC_INIT(m6809-run, 0.93, cartheur@pm.me)
-AC_CONFIG_SRCDIR([/src/6809.c])
+AC_CONFIG_SRCDIR([6809.c])
 AM_INIT_AUTOMAKE([foreign])
 AC_CONFIG_HEADER([config.h])
 

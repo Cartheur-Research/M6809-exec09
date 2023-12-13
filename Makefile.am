@@ -1,5 +1,3 @@
-SUBDIRS = src
-
 m6809_run_SOURCES = \
 	6809.c main.c monitor.c machine.c eon.c wpc.c miscsbc.c \
 	symtab.c command.c fileio.c wpclib.c imux.c \
