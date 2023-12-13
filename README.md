@@ -17,7 +17,6 @@ While in a terminal at the root directory of this project, generate the configur
 ```
 autoconf -o configure
 autoreconf --install
-
 ```
 
 ## Build and install (Debian)
