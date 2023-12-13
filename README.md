@@ -2,17 +2,15 @@
 
 A portable and extendable emulator of the Motorola 6809.
 
-## Build and install (on Linux)
+## Build and install (Debian)
 
-It is a requisite to have `make`, `gcc`, `aclocal`, `automake` and dependency packages, then:
+It is a requisite to have `make`, `gcc`, `aclocal`, `automake` and dependency packages. Optionally (but a good idea) is to also install `libreadline-dev`. Run `configure`:
 
 ```
 ./configure
 make
 ```
-It maybe required to run `chmod +x configure`.
-
-There is one executable, `m6809-run`. You can install it `make install` or simply reference it explicitly. To see configurable options:
+Depending on your system, it might be required to run `chmod +x configure`. There is one executable, `m6809-run`. You can install it `make install` or simply reference it explicitly. To see configurable options:
 
 `./configure --help`
 
