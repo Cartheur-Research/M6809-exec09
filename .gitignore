@@ -16,7 +16,7 @@ config.status
 config.h.in
 m6809-run
 stamp-h1
-Makefile
+/Makefile
 Makefile.in
 
 # Result of make
