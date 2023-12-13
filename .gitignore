@@ -26,5 +26,5 @@ Makefile.in
 *~
 
 # Result of autoreconf --install
-INSTALL
+
 COPYING
