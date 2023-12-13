@@ -2,6 +2,8 @@
 
 A portable and extendable emulator of the Motorola 6809.
 
+This is the `park` branch, for `make` experimentation.
+
 ### Prerequisites
 
 It is a requisite to have the following packages installed.
