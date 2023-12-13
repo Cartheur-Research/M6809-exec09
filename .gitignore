@@ -24,3 +24,7 @@ Makefile.in
 
 # Result of emacs edits
 *~
+
+# Result of autoreconf --install
+INSTALL
+COPYING
