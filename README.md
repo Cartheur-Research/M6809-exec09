@@ -39,6 +39,16 @@ Enable readline libraries if they are installed; this will allow use of command-
 make
 ```
 
+### Clean-up
+
+When finished, clean-up the generated files:
+
+`git clean -fX`
+
+Clean-up the generated directories:
+
+`git clean -fd`
+
 ### Machines
 
 The emulator now has the notion of different _machines_, which says what types of I/O devices are mapped into the 6809's address space and how they can be accessed.  Adding support for a new machine is fairly easy.
