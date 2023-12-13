@@ -2,9 +2,17 @@
 
 A portable and extendable emulator of the Motorola 6809.
 
+## Prerequisites
+
+It is a requisite to have `make`, `gcc`, `aclocal`, `autoconf` and dependency packages. Optionally (but a good idea) is to also install `libreadline-dev`. 
+
+## Code configuration
+
+While in a terminal at the root directory of this project, generate the configure for your system by using `autoconf -o configure`.  If you receive the error `possibly undefined macro: AM_INIT_AUTOMAKE` run `autoreconf --install`.
+
 ## Build and install (Debian)
 
-It is a requisite to have `make`, `gcc`, `aclocal`, `automake` and dependency packages. Optionally (but a good idea) is to also install `libreadline-dev`. Run `configure`:
+Run:
 
 ```
 ./configure
