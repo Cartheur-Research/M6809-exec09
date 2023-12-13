@@ -4,6 +4,8 @@ A portable and extendable emulator of the Motorola 6809.
 
 This is the `ravine` branch, for code-alignment purposes.
 
+Current status is --BUIIDLING--
+
 ### Prerequisites
 
 It is a requisite to have the following packages installed.
