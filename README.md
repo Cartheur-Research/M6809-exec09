@@ -4,7 +4,11 @@ A portable and extendable emulator of the Motorola 6809.
 
 ## Prerequisites
 
-It is a requisite to have `make`, `gcc`, `aclocal`, `autoconf` and dependency packages. Optionally (but a good idea) is to also install `libreadline-dev`. 
+It is a requisite to have the following packages installed.
+
+`apt install make gcc aclocal autoconf automake librool libreadline-dev`
+
+The optional package `libreadline-dev` is very handy for debugging development post-install. 
 
 ## Code configuration
 
