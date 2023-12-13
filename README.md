@@ -1,8 +1,8 @@
-# M6809-exec09
+## M6809-exec09
 
 A portable and extendable emulator of the Motorola 6809.
 
-## Prerequisites
+### Prerequisites
 
 It is a requisite to have the following packages installed.
 
@@ -10,7 +10,7 @@ It is a requisite to have the following packages installed.
 
 The optional package `libreadline-dev` is very handy for debugging development post-install. 
 
-## Code configuration
+### Code configuration
 
 While in a terminal at the root directory of this project, generate the configure for your system and generate buildable sources:
 
@@ -19,7 +19,7 @@ autoconf -o configure
 autoreconf --install
 ```
 
-## Build and install (Debian)
+### Build and install (Debian)
 
 Run:
 
