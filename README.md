@@ -6,7 +6,7 @@ A portable and extendable emulator of the Motorola 6809.
 
 It is a requisite to have the following packages installed.
 
-`apt install make gcc aclocal autoconf automake librool libreadline-dev`
+`apt install make gcc autoconf automake autotools-dev libreadline-dev libtool`
 
 The optional package `libreadline-dev` is very handy for debugging development post-install. 
 
