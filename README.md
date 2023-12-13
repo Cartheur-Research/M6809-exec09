@@ -2,7 +2,7 @@
 
 A portable and extendable emulator of the Motorola 6809.
 
-This is the `park` branch, for `make` experimentation.
+This is the `ravine` branch, for code-alignment purposes.
 
 ### Prerequisites
 
