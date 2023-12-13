@@ -12,7 +12,13 @@ The optional package `libreadline-dev` is very handy for debugging development p
 
 ## Code configuration
 
-While in a terminal at the root directory of this project, generate the configure for your system by using `autoconf -o configure`.  If you receive the error `possibly undefined macro: AM_INIT_AUTOMAKE` run `autoreconf --install`.
+While in a terminal at the root directory of this project, generate the configure for your system and generate buildable sources:
+
+```
+autoconf -o configure
+autoreconf --install
+
+```
 
 ## Build and install (Debian)
 
