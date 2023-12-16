@@ -1,6 +1,6 @@
-## M6809-exec09
+## Multicomputer emulator of 6x09
 
-A portable and extendable emulator of the Motorola 6809.
+A portable and extendable emulator of the 6x09 architecture system called exec09 where the numeric represents the architecture family.
 
 ### Prerequisites
 
