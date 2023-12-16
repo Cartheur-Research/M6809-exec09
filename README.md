@@ -1,6 +1,6 @@
 ## Multicomputer emulator of 6x09
 
-A portable and extendable emulator of the 6x09 architecture system called exec09 where the numeric _09_ represents the architecture family.
+An extendable emulator of the 6x09 architecture system called exec09 where the numeric _09_ represents the architecture family.
 
 ### Prerequisites
 
