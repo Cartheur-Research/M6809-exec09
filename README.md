@@ -1,6 +1,6 @@
 ## Multicomputer emulator of 6x09
 
-An extendable emulator of the 6x09 architecture system called exec09 where the numeric _09_ represents the architecture family.
+An extendable emulator of the 6x09 architecture system where the numeric _09_ represents the architecture family.
 
 ### Prerequisites
 
@@ -10,7 +10,7 @@ It is a requisite to have the following packages installed.
 
 The optional package `libreadline-dev` is very handy for debugging development post-install. 
 
-### Code configuration
+### Code configuration to build _exec-09_
 
 While in a terminal at the root directory of this project, generate the configure for your system and generate buildable sources:
 
