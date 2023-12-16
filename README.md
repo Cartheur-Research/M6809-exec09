@@ -1,4 +1,4 @@
-## Multicomputer emulator of 6x09
+## Multicomputer emulator 6x09
 
 An extendable emulator of the 6x09 architecture system where the numeric _09_ represents the architecture family.
 
