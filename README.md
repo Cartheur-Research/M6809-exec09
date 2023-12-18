@@ -19,6 +19,10 @@ autoconf -o configure
 autoreconf --install
 ```
 
+### Makefile tools
+
+When using VS Code, install this extension. Besides providing the Intellisense support, it has a `dry-run` feature that will aid in preparing the codebase as changes are introduced.
+
 ### Build and install (Debian)
 
 Run:
