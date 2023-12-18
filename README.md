@@ -21,7 +21,7 @@ autoreconf --install
 
 ### Makefile tools
 
-When using VS Code, install this extension. Besides providing the Intellisense support, it has a `dry-run` feature that will aid in preparing the codebase as changes are introduced.
+When using VS Code, install this extension. Besides providing the Intellisense support, it has a `--dry-run` feature that will aid in preparing the codebase as changes are introduced. Setting this to `--always-make` keeps the generated build objects in a current state.
 
 ### Build and install (Debian)
 
